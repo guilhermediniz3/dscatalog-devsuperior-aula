@@ -12,7 +12,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 @Entity
@@ -23,12 +22,13 @@ public class Product implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;
 	private String name;
-	@Lob
-	@Column(columnDefinition = "text")
+	
+	@Column(columnDefinition = "TEXT")
 	private String description;
 	private Double price;
 	private String imgUrl;
-	@Lob
+
+
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE	")
 	private Instant date;
 	@ManyToMany
